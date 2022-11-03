@@ -1,0 +1,27 @@
+<ul>
+  <li><a routerLink="/settings">Settings</a></li>
+  <li><a routerLink="/exercise">Exercise</a></li>
+</ul>
+
+<h1>Exercises</h1>
+
+<form #f="ngForm">
+  <table>
+    <tr>
+      <th>Calculation</th>
+      <th>Result</th>
+      <th [hidden]="!showSolution">Correct Answer</th>
+    </tr>
+
+    <tr *ngFor="let item of exercises; let ix = index">
+      <td>{{item.number1}} {{item.operator}} {{item.number2}} =</td>
+      <td>
+        <input [(ngModel)]="item.input" type="number" name="inputResult{{ix}}" placeholder="Result" required />
+      </td>
+      <td [hidden]="!showSolution" [style]="'color: ' + (item.result === item.input ? 'green' : 'red')">{{item.result}}</td>
+    </tr>
+  </table>
+</form>
+
+<button type="button" (click)="done()" [disabled]="!f.form.valid">Done</button>
+<button (click)="reset()">New Exercise</button>

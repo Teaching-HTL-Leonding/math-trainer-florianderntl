@@ -1,0 +1,30 @@
+/* You can add global styles to this file, and also import other style files */
+
+* {
+  font-family: sans-serif;
+}
+
+body {
+  margin-left: 300px;
+}
+
+input {
+  margin-top: 20px;
+}
+
+select {
+  margin-left: 8px;
+  margin-right: 20px;
+}
+
+button {
+  margin: 20px
+}
+
+tr {
+  text-align: center;
+}
+
+td, th {
+  padding-right: 50px;
+}
