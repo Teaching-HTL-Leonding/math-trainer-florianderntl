@@ -1,9 +1,8 @@
 <ul>
-  <li><a routerLink="/settings">Settings</a></li>
   <li [hidden]="settings.getOperators().length === 0"><a routerLink="/exercise">Exercise</a></li>
 </ul>
 
-<h1>Settings</h1>
+<h2>Settings</h2>
 
 <label for="selectNrOfDigits">Digits:</label>
 <select name="selectNrOfDigits" id="selectNrOfDigits" [(ngModel)]="settings.nrOfDigits" >
